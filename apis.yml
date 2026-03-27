@@ -1,0 +1,39 @@
+aid: integry
+name: Integry
+description: >-
+  Integry is an embedded integration platform that lets SaaS companies offer
+  native integrations to their users.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Embedded iPaaS
+  - Native Integrations
+  - Integration
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/integry/refs/heads/main/apis.yml
+created: '2026-03-27'
+modified: '2026-03-27'
+specificationVersion: '0.19'
+apis:
+  - aid: integry:apis
+    name: Integry API
+    description: >-
+      Integry enables SaaS companies to embed native integrations into their
+      products, providing pre-built connectors and an integration marketplace.
+    humanURL: https://integry.io
+    tags:
+      - Embedded iPaaS
+      - Native Integrations
+    properties:
+      - type: Documentation
+        url: https://docs.integry.io
+common:
+  - type: Website
+    url: https://integry.io
+  - type: Documentation
+    url: https://docs.integry.io
+  - type: GitHub Organization
+    url: https://github.com/IntegryHQ
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
