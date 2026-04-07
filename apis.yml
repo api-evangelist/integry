@@ -7,8 +7,8 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Embedded iPaaS
-  - Native Integrations
   - Integration
+  - Native Integrations
 url: >-
   https://raw.githubusercontent.com/api-evangelist/integry/refs/heads/main/apis.yml
 created: '2026-03-27'
