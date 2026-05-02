@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Integry API
+  description: >-
+    Integry is an embedded integration platform that lets SaaS companies offer
+    native integrations to their users. The API exposes apps, functions, and
+    flows used to predict, list, retrieve, and call integration functions on
+    behalf of end users.
+  version: '1.0'
+  contact:
+    name: Integry
+    url: https://docs.integry.ai
+servers:
+  - url: https://api.integry.io
+    description: Integry production API
+security:
+  - AppKey: []
+    UserID: []
+    Hash: []
+paths:
+  /apps/list:
+    post:
+      summary: List apps
+      description: List apps available within the Integry workspace.
+      operationId: listApps
+      responses:
+        '200':
+          description: A list of apps.
+  /apps/{app_name}/get:
+    post:
+      summary: Get app
+      description: Retrieve metadata for a single app by name.
+      operationId: getApp
+      parameters:
+        - name: app_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: App metadata.
+  /functions/list:
+    post:
+      summary: List functions
+      description: List functions available for the authenticated user.
+      operationId: listFunctions
+      responses:
+        '200':
+          description: A list of functions.
+  /functions/predict:
+    post:
+      summary: Predict functions
+      description: Predict the most relevant functions for a user prompt or query.
+      operationId: predictFunctions
+      responses:
+        '200':
+          description: Predicted functions.
+  /functions/{function_name}/get:
+    post:
+      summary: Get function
+      description: Retrieve a single function by name.
+      operationId: getFunction
+      parameters:
+        - name: function_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Function definition.
+  /functions/{function_name}/call:
+    post:
+      summary: Call function
+      description: Execute the named function for the authenticated user.
+      operationId: callFunction
+      parameters:
+        - name: function_name
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Function execution result.
+components:
+  securitySchemes:
+    AppKey:
+      type: apiKey
+      in: header
+      name: App-Key
+      description: Integry application key.
+    UserID:
+      type: apiKey
+      in: header
+      name: User-ID
+      description: End user identifier within the Integry workspace.
+    Hash:
+      type: apiKey
+      in: header
+      name: Hash
+      description: HMAC SHA256 hash of the User-ID using the App-Secret.
