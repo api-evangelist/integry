@@ -37,7 +37,7 @@ common:
     url: https://integry.io
   - type: Documentation
     url: https://docs.integry.ai
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/IntegryHQ
 maintainers:
   - FN: Kin Lane
