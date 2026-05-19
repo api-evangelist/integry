@@ -1,25 +1,23 @@
 naftiko: 1.0.0-alpha2
 info:
   label: Integry API
-  description: Integry is an embedded integration platform that lets SaaS companies offer native integrations to their users.
-    The API exposes apps, functions, and flows used to predict, list, retrieve, and call integration functions on behalf of
-    end users.
+  description: 'Integry API. 6 operations. Lead operation: List apps. Self-contained Naftiko capability covering one Integry
+    business surface.'
   tags:
   - Integry
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Integry API
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    INTEGRY_API_KEY: INTEGRY_API_KEY
 capability:
   consumes:
   - type: http
     namespace: integry
     baseUri: https://api.integry.io
-    description: Integry API HTTP API.
-    authentication:
-      type: apikey
-      in: header
-      name: App-Key
-      value: '{{INTEGRY_TOKEN}}'
+    description: Integry API business capability. Self-contained, no shared references.
     resources:
     - name: apps-list
       path: /apps/list
@@ -32,22 +30,22 @@ capability:
         - name: result
           type: object
           value: $.
-    - name: apps-app-name-get
+    - name: apps-app_name-get
       path: /apps/{app_name}/get
       operations:
       - name: getapp
         method: POST
         description: Get app
-        inputParameters:
-        - name: app_name
-          in: path
-          type: string
-          required: true
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: app_name
+          in: path
+          type: string
+          required: true
     - name: functions-list
       path: /functions/list
       operations:
@@ -70,46 +68,52 @@ capability:
         - name: result
           type: object
           value: $.
-    - name: functions-function-name-get
-      path: /functions/{function_name}/get
-      operations:
-      - name: getfunction
-        method: POST
-        description: Get function
-        inputParameters:
-        - name: function_name
-          in: path
-          type: string
-          required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: functions-function-name-call
+    - name: functions-function_name-call
       path: /functions/{function_name}/call
       operations:
       - name: callfunction
         method: POST
         description: Call function
-        inputParameters:
-        - name: function_name
-          in: path
-          type: string
-          required: true
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: function_name
+          in: path
+          type: string
+          required: true
+    - name: functions-function_name-get
+      path: /functions/{function_name}/get
+      operations:
+      - name: getfunction
+        method: POST
+        description: Get function
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: function_name
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: apikey
+      key: App-Key
+      value: '{{env.INTEGRY_API_KEY}}'
+      placement: header
   exposes:
   - type: rest
-    port: 8080
     namespace: integry-rest
-    description: REST adapter for Integry API.
+    port: 8080
+    description: REST adapter for Integry API. One Spectral-compliant resource per consumed operation, prefixed with /v1.
     resources:
-    - path: /apps/list
-      name: listapps
+    - path: /v1/apps/list
+      name: apps-list
+      description: REST surface for apps-list.
       operations:
       - method: POST
         name: listapps
@@ -118,8 +122,9 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /apps/{app_name}/get
-      name: getapp
+    - path: /v1/apps/{app-name}/get
+      name: apps-app-name-get
+      description: REST surface for apps-app_name-get.
       operations:
       - method: POST
         name: getapp
@@ -130,8 +135,9 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /functions/list
-      name: listfunctions
+    - path: /v1/functions/list
+      name: functions-list
+      description: REST surface for functions-list.
       operations:
       - method: POST
         name: listfunctions
@@ -140,8 +146,9 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /functions/predict
-      name: predictfunctions
+    - path: /v1/functions/predict
+      name: functions-predict
+      description: REST surface for functions-predict.
       operations:
       - method: POST
         name: predictfunctions
@@ -150,20 +157,9 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
-    - path: /functions/{function_name}/get
-      name: getfunction
-      operations:
-      - method: POST
-        name: getfunction
-        description: Get function
-        call: integry.getfunction
-        with:
-          function_name: rest.function_name
-        outputParameters:
-        - type: object
-          mapping: $.
-    - path: /functions/{function_name}/call
-      name: callfunction
+    - path: /v1/functions/{function-name}/call
+      name: functions-function-name-call
+      description: REST surface for functions-function_name-call.
       operations:
       - method: POST
         name: callfunction
@@ -174,50 +170,59 @@ capability:
         outputParameters:
         - type: object
           mapping: $.
+    - path: /v1/functions/{function-name}/get
+      name: functions-function-name-get
+      description: REST surface for functions-function_name-get.
+      operations:
+      - method: POST
+        name: getfunction
+        description: Get function
+        call: integry.getfunction
+        with:
+          function_name: rest.function_name
+        outputParameters:
+        - type: object
+          mapping: $.
   - type: mcp
-    port: 9090
     namespace: integry-mcp
+    port: 9090
     transport: http
-    description: MCP adapter for Integry API for AI agent use.
+    description: MCP adapter for Integry API. One tool per consumed operation, routed inline through this capability's consumes
+      block.
     tools:
-    - name: listapps
+    - name: list-apps
       description: List apps
       hints:
-        readOnly: false
+        readOnly: true
         destructive: false
         idempotent: false
       call: integry.listapps
       outputParameters:
       - type: object
         mapping: $.
-    - name: getapp
+    - name: get-app
       description: Get app
       hints:
-        readOnly: false
+        readOnly: true
         destructive: false
         idempotent: false
       call: integry.getapp
       with:
         app_name: tools.app_name
-      inputParameters:
-      - name: app_name
-        type: string
-        description: app_name
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: listfunctions
+    - name: list-functions
       description: List functions
       hints:
-        readOnly: false
+        readOnly: true
         destructive: false
         idempotent: false
       call: integry.listfunctions
       outputParameters:
       - type: object
         mapping: $.
-    - name: predictfunctions
+    - name: predict-functions
       description: Predict functions
       hints:
         readOnly: false
@@ -227,24 +232,7 @@ capability:
       outputParameters:
       - type: object
         mapping: $.
-    - name: getfunction
-      description: Get function
-      hints:
-        readOnly: false
-        destructive: false
-        idempotent: false
-      call: integry.getfunction
-      with:
-        function_name: tools.function_name
-      inputParameters:
-      - name: function_name
-        type: string
-        description: function_name
-        required: true
-      outputParameters:
-      - type: object
-        mapping: $.
-    - name: callfunction
+    - name: call-function
       description: Call function
       hints:
         readOnly: false
@@ -253,15 +241,18 @@ capability:
       call: integry.callfunction
       with:
         function_name: tools.function_name
-      inputParameters:
-      - name: function_name
-        type: string
-        description: function_name
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-binds:
-- namespace: env
-  keys:
-    INTEGRY_TOKEN: INTEGRY_TOKEN
+    - name: get-function
+      description: Get function
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: integry.getfunction
+      with:
+        function_name: tools.function_name
+      outputParameters:
+      - type: object
+        mapping: $.
