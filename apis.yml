@@ -38,6 +38,8 @@ common:
   url: https://docs.integry.ai
 - type: GitHubOrganization
   url: https://github.com/IntegryHQ
+- type: LLMsTxt
+  url: https://docs.integry.ai/llms.txt
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
