@@ -1,0 +1,512 @@
+{
+  "item": [
+    {
+      "id": "a4dc9a99-0bd0-4b4b-b80b-2a5697ef64c7",
+      "name": "List apps",
+      "request": {
+        "name": "List apps",
+        "description": {
+          "content": "List apps available within the Integry workspace.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "apps",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "f26b5789-ffb4-4944-af55-1537756bd8fb",
+          "name": "A list of apps.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "apps",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "App-Key",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "23612752-1fa1-4425-9bdf-57205edce77e",
+      "name": "Get app",
+      "request": {
+        "name": "Get app",
+        "description": {
+          "content": "Retrieve metadata for a single app by name.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "apps",
+            ":app_name",
+            "get"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "app_name",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "408e52ff-ff98-4e10-b7e0-3693d607e707",
+          "name": "App metadata.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "apps",
+                ":app_name",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "app_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "App-Key",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "bf4327de-c62a-4c23-84fa-fe47f58fb271",
+      "name": "List functions",
+      "request": {
+        "name": "List functions",
+        "description": {
+          "content": "List functions available for the authenticated user.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "functions",
+            "list"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "1f6d46a2-a119-4568-835f-7b65bd274c46",
+          "name": "A list of functions.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "functions",
+                "list"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "App-Key",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "c03755ab-6b5e-4258-807a-753b661683cb",
+      "name": "Predict functions",
+      "request": {
+        "name": "Predict functions",
+        "description": {
+          "content": "Predict the most relevant functions for a user prompt or query.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "functions",
+            "predict"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": []
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "58692e82-e70f-420d-8336-aaa26f86efeb",
+          "name": "Predicted functions.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "functions",
+                "predict"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "App-Key",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "ac976a8d-15d2-4cf2-b2a4-530b5f8fbaf6",
+      "name": "Get function",
+      "request": {
+        "name": "Get function",
+        "description": {
+          "content": "Retrieve a single function by name.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "functions",
+            ":function_name",
+            "get"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "function_name",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "704e0d59-d9c1-4da2-a69a-fad02b60999a",
+          "name": "Function definition.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "functions",
+                ":function_name",
+                "get"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "function_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "App-Key",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    },
+    {
+      "id": "2495b8e3-f9ff-45ab-9d31-03d28319967d",
+      "name": "Call function",
+      "request": {
+        "name": "Call function",
+        "description": {
+          "content": "Execute the named function for the authenticated user.",
+          "type": "text/plain"
+        },
+        "url": {
+          "path": [
+            "functions",
+            ":function_name",
+            "call"
+          ],
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "query": [],
+          "variable": [
+            {
+              "disabled": false,
+              "type": "any",
+              "value": "<string>",
+              "key": "function_name",
+              "description": "(Required) "
+            }
+          ]
+        },
+        "method": "POST",
+        "auth": null
+      },
+      "response": [
+        {
+          "id": "862553cf-97cf-4792-8e97-49b48fa27485",
+          "name": "Function execution result.",
+          "originalRequest": {
+            "url": {
+              "path": [
+                "functions",
+                ":function_name",
+                "call"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "function_name",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "description": {
+                  "content": "Added as a part of security scheme: apikey",
+                  "type": "text/plain"
+                },
+                "key": "App-Key",
+                "value": "<API Key>"
+              }
+            ],
+            "method": "POST",
+            "body": {}
+          },
+          "status": "OK",
+          "code": 200,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "text/plain"
+            }
+          ],
+          "body": "",
+          "cookie": [],
+          "_postman_previewlanguage": "text"
+        }
+      ],
+      "event": [],
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      }
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.integry.io",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "App-Key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "16adf1dd-7b36-4a62-a8a4-db03608ea073",
+    "name": "Integry API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Integry is an embedded integration platform that lets SaaS companies offer native integrations to their users. The API exposes apps, functions, and flows used to predict, list, retrieve, and call integration functions on behalf of end users.\n\nContact Support:\n Name: Integry",
+      "type": "text/plain"
+    }
+  }
+}

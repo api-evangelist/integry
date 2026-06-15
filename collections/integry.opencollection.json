@@ -1,0 +1,105 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Integry API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "App-Key",
+      "value": "{{App-Key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "List apps",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.integry.io/apps/list"
+      },
+      "docs": "List apps available within the Integry workspace."
+    },
+    {
+      "info": {
+        "name": "Get app",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.integry.io/apps/:app_name/get",
+        "params": [
+          {
+            "name": "app_name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve metadata for a single app by name."
+    },
+    {
+      "info": {
+        "name": "List functions",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.integry.io/functions/list"
+      },
+      "docs": "List functions available for the authenticated user."
+    },
+    {
+      "info": {
+        "name": "Predict functions",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.integry.io/functions/predict"
+      },
+      "docs": "Predict the most relevant functions for a user prompt or query."
+    },
+    {
+      "info": {
+        "name": "Get function",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.integry.io/functions/:function_name/get",
+        "params": [
+          {
+            "name": "function_name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Retrieve a single function by name."
+    },
+    {
+      "info": {
+        "name": "Call function",
+        "type": "http"
+      },
+      "http": {
+        "method": "POST",
+        "url": "https://api.integry.io/functions/:function_name/call",
+        "params": [
+          {
+            "name": "function_name",
+            "value": "",
+            "type": "path"
+          }
+        ]
+      },
+      "docs": "Execute the named function for the authenticated user."
+    }
+  ],
+  "bundled": true
+}
