@@ -2,7 +2,7 @@ aid: integry
 name: Integry
 description: Integry is an embedded integration platform that lets SaaS companies offer native integrations to their users.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Embedded iPaaS
   - Integration
