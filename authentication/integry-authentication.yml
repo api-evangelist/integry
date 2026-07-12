@@ -1,0 +1,30 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/integry-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - header
+schemes:
+- name: AppKey
+  type: apiKey
+  in: header
+  parameter: App-Key
+  description: Integry application key.
+  sources:
+  - openapi/integry-openapi.yml
+- name: UserID
+  type: apiKey
+  in: header
+  parameter: User-ID
+  description: End user identifier within the Integry workspace.
+  sources:
+  - openapi/integry-openapi.yml
+- name: Hash
+  type: apiKey
+  in: header
+  parameter: Hash
+  description: HMAC SHA256 hash of the User-ID using the App-Secret.
+  sources:
+  - openapi/integry-openapi.yml
