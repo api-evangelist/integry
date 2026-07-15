@@ -29,6 +29,8 @@ apis:
       - type: OpenAPI
         url: openapi/integry-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/integry-agentic-access.yml
   - type: DomainSecurity
     url: security/integry-domain-security.yml
   - type: Authentication
