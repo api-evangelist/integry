@@ -1,45 +1,21 @@
 openapi: 3.0.3
 info:
-  title: Integry API
-  description: >-
-    Integry is an embedded integration platform that lets SaaS companies offer
-    native integrations to their users. The API exposes apps, functions, and
-    flows used to predict, list, retrieve, and call integration functions on
-    behalf of end users.
+  title: Integry Apps Functions API
+  description: Integry is an embedded integration platform that lets SaaS companies offer native integrations to their users. The API exposes apps, functions, and flows used to predict, list, retrieve, and call integration functions on behalf of end users.
   version: '1.0'
   contact:
     name: Integry
     url: https://docs.integry.ai
 servers:
-  - url: https://api.integry.io
-    description: Integry production API
+- url: https://api.integry.io
+  description: Integry production API
 security:
-  - AppKey: []
-    UserID: []
-    Hash: []
+- AppKey: []
+  UserID: []
+  Hash: []
+tags:
+- name: Functions
 paths:
-  /apps/list:
-    post:
-      summary: List apps
-      description: List apps available within the Integry workspace.
-      operationId: listApps
-      responses:
-        '200':
-          description: A list of apps.
-  /apps/{app_name}/get:
-    post:
-      summary: Get app
-      description: Retrieve metadata for a single app by name.
-      operationId: getApp
-      parameters:
-        - name: app_name
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: App metadata.
   /functions/list:
     post:
       summary: List functions
@@ -48,6 +24,8 @@ paths:
       responses:
         '200':
           description: A list of functions.
+      tags:
+      - Functions
   /functions/predict:
     post:
       summary: Predict functions
@@ -56,34 +34,40 @@ paths:
       responses:
         '200':
           description: Predicted functions.
+      tags:
+      - Functions
   /functions/{function_name}/get:
     post:
       summary: Get function
       description: Retrieve a single function by name.
       operationId: getFunction
       parameters:
-        - name: function_name
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: function_name
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Function definition.
+      tags:
+      - Functions
   /functions/{function_name}/call:
     post:
       summary: Call function
       description: Execute the named function for the authenticated user.
       operationId: callFunction
       parameters:
-        - name: function_name
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: function_name
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Function execution result.
+      tags:
+      - Functions
 components:
   securitySchemes:
     AppKey:
