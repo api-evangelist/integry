@@ -1,0 +1,16 @@
+{
+  "provider": "integry",
+  "sources": [
+    "integry-apps-api-openapi.yml",
+    "integry-functions-api-openapi.yml"
+  ],
+  "outputs": [
+    "integry-apps-api-openapi.yml",
+    "integry-functions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
