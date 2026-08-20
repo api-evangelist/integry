@@ -31,6 +31,8 @@ apis:
   humanURL: https://integry.io
   baseURL: https://api.integry.io
   tags:
+  - Application
+  tags_raw:
   - Apps
   properties:
   - type: OpenAPI
