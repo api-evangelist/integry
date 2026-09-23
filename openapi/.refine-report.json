@@ -1,8 +1,7 @@
 {
   "provider": "integry",
   "sources": [
-    "integry-apps-api-openapi.yml",
-    "integry-functions-api-openapi.yml"
+    "_original/integry-openapi.yml"
   ],
   "outputs": [
     "integry-apps-api-openapi.yml",
@@ -11,6 +10,21 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "integry-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "integry-openapi.yml: tagged paths POST /apps/list -> Apps",
+    "integry-openapi.yml: tagged paths POST /apps/{app_name}/get -> Apps",
+    "integry-openapi.yml: tagged paths POST /functions/list -> Functions",
+    "integry-openapi.yml: tagged paths POST /functions/predict -> Functions",
+    "integry-openapi.yml: tagged paths POST /functions/{function_name}/get -> Functions",
+    "integry-openapi.yml: tagged paths POST /functions/{function_name}/call -> Functions",
+    "integry-openapi.yml: declared missing tag: Apps",
+    "integry-openapi.yml: declared missing tag: Functions",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "integry-apps-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "integry-functions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

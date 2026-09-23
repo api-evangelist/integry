@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Integry Apps Functions API
+  title: Integry Functions API
   description: Integry is an embedded integration platform that lets SaaS companies offer native integrations to their users. The API exposes apps, functions, and flows used to predict, list, retrieve, and call integration functions on behalf of end users.
   version: '1.0'
   contact:
