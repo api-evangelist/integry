@@ -33,6 +33,23 @@ edges:
   detected: '2026-10-21'
   detected_by: mirror-platform-listings.py
   category: WORKFLOW_AUTOMATION
+- partner_name: Intercom (own)
+  partner: intercom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.intercom.com/app-store/?app_package_code=integry-b0q1
+  mirror_of: intercom/integrations/intercom-integration-edges.yml
+  apps:
+  - Integry
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Automation platforms
 generated: '2026-10-18'
 method: searched
 source:
@@ -40,3 +57,4 @@ source:
 checked:
 - slack/integrations/slack-integration-edges.yml
 - hubspot/integrations/hubspot-integration-edges.yml
+- intercom/integrations/intercom-integration-edges.yml
