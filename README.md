@@ -1,4 +1,4 @@
-# Integry (integry)
+# Integry
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,53 +66,117 @@
 
 Integry is an embedded integration platform that lets SaaS companies offer native integrations to their users.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/integry/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/integry/refs/heads/main/apis.yml)
+**Areas:** Embedded iPaaS · Integration · Native Integrations
 
-## Scope
+## Integry on APIs.io
 
-- **Type:** Index
+Everything profiled for Integry is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/integry/](https://apis.io/providers/integry/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (2)
 
-- Embedded iPaaS
-- Integration
-- Native Integrations
+- [Integry Apps API](https://apis.io/apis/integry/integry-apps-api/) — The Apps API from Integry — 2 operation(s) for apps.
+- [Integry Functions API](https://apis.io/apis/integry/integry-functions-api/) — The Functions API from Integry — 4 operation(s) for functions.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-27
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Integry API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Integry enables SaaS companies to embed native integrations into their products, providing pre-built connectors and an integration marketplace. The REST API exposes apps, functions, and flows for predicting, listing, retrieving, and executing integrations on behalf of end users.
+- [Integry Agentic Access](https://apis.io/agentic-access/integry/integry-agentic-access/)
 
-- **Human URL:** [https://integry.io](https://integry.io)
-- **Base URL:** `https://api.integry.io`
+#### Collections (3)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Embedded iPaaS
-- Native Integrations
+- [Integry API](https://apis.io/collections/integry/open-integry/)
+- [Integry Apps API](https://apis.io/collections/integry/open-integry-apps-api/)
+- [Integry Apps Functions API](https://apis.io/collections/integry/open-integry-functions-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://docs.integry.ai)
-- [OpenAPI](openapi/integry-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/integry.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/integry.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Integry Authentication](https://apis.io/security/integry/integry-authentication/)
+- [Integry Domain Security](https://apis.io/security/integry/integry-domain-security/)
 
-- [LinkedIn](https://www.linkedin.com/company/integryio)
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Integry Plans Pricing](https://apis.io/plans/integry/integry-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Integry Rate Limits](https://apis.io/rate-limits/integry/integry-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Integry Finops](https://apis.io/finops/integry/integry-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://integry.io)
 - [Documentation](https://docs.integry.ai)
-- [GitHub Organization](https://github.com/IntegryHQ)
-- [L L Ms Txt](https://docs.integry.ai/llms.txt)
+- [GitHub](https://github.com/IntegryHQ)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 23.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 47.8 |
+| Contract governance | 0.0 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 21.4 |
+| Access clarity | 7.9 |
+
+**Agent readiness 17.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/integry/](https://apis.io/providers/integry/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Integry: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/integry/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
